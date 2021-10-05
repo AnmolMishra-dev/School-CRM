@@ -11,16 +11,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List informations=[
+  List informations = [
     {
-      "name": "DemoName",
-      "gender": "Female/Male",
-      "fatherName": "DemoName",
-      "motherName": "DemoName",
+      "name": "Alison",
+      "gender": "Female",
+      "fatherName": "Diane",
+      "motherName": "Alexandra",
       "dob": "10/12/1999",
-      "religion": "Demo",
-      "fatherOpposition": "Demo",
-      "email": "Demo",
+      "religion": "Christian ",
+      "fatherOpposition": "Business",
+      "email": "xyz@x.com",
       "addmissionDate": "10/1/2002",
       "class": 3,
       "sections": "A",
@@ -87,27 +87,29 @@ class _HomeState extends State<Home> {
                             color: Colors.white,
                           ),
                           Container(
-height: 50,
+                            height: 50,
                           ),
                           Container(
-                            height:60 ,
+                            height: 60,
                             child: Row(
                               children: [
-                                Icon(Icons.dashboard_outlined,color: MyColors.BackGround_Color1,),
-                                Text("Dashboard",style: TextStyle(color: MyColors.BackGround_Color1)),
-Spacer(flex: 1,),
-                                Icon(Icons.arrow_drop_down,color: MyColors.BackGround_Color1,),
-
-
+                                Icon(
+                                  Icons.dashboard_outlined,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                                Text("Dashboard",
+                                    style: TextStyle(
+                                        color: MyColors.BackGround_Color1)),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: MyColors.BackGround_Color1,
+                                ),
                               ],
                             ),
                           )
-
-
-
-
-
-
                         ],
                       ),
                     ))
@@ -490,7 +492,7 @@ Spacer(flex: 1,),
                                                         .size
                                                         .width *
                                                     .18,
-                                                  height: 110,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -686,172 +688,366 @@ Spacer(flex: 1,),
                                                       .width *
                                                   .386,
                                               child: Column(
-
-                                                mainAxisAlignment: MainAxisAlignment.start,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Padding(
-                                                    padding: const EdgeInsets.all(8.0),
-                                                    child: Text("My Information",style: TextStyle(color: MyColors.Text_Coloe_Black,fontWeight: FontWeight.bold),),
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text(
+                                                      "My Information",
+                                                      style: TextStyle(
+                                                          color: MyColors
+                                                              .Text_Coloe_Black,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
                                                   ),
-
-                                                  Container(height: 1,color: MyColors.Intro_Text_Color,),
-
+                                                  Container(
+                                                    height: 1,
+                                                    color: MyColors
+                                                        .Intro_Text_Color,
+                                                  ),
                                                   Padding(
-                                                    padding: const EdgeInsets.only(top: 15,left: 15,right: 15),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 15,
+                                                            left: 15,
+                                                            right: 15),
                                                     child: Row(
-
-
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                      Container(
-                                                        height: 200,
-                                                        width: 200,
-                                                        color: Colors.green,
-
-                                                      ),
-
 
                                                         Container(
-                                                          height: 400,
-                                                          width: MediaQuery.of(context).size.width*.2,
-                                                          child:  Expanded(
-                                                            child: ListView.builder(
-    itemCount: informations.length,
-    itemBuilder: (BuildContext context,int index){
-    return Padding(
-      padding: const EdgeInsets.only(left: 35),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-
-       children: [
-         Row(
-           children:[
-           SizedBox(width: 40,),
-             Text("Name:",style: TextStyle(color: Colors.grey.shade400,),),
-             SizedBox(width: 40,),
-             Text(informations[index]["name"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Gender:",style: TextStyle(color: Colors.grey.shade400,),),
-             SizedBox(width: 40,),
-             Text(informations[index]["gender"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Father Name:",style: TextStyle(color: Colors.grey.shade400,),),
-             SizedBox(width: 40,),
-             Text(informations[index]["fatherName"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-           ],
-         ),
-
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("DOB:",style: TextStyle(color: Colors.grey.shade400,),),
-             SizedBox(width: 40,),
-             Text(informations[index]["dob"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-         Row(
-           children:[
-             SizedBox(width: 40,),
-             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
-             SizedBox(width: 40,),
-             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
-           ],
-         ),
-       ],
-
-      ),
-    );},
-
-
+                                                          height: 200,
+                                                          width: 200,
+                                                         
+                                                            decoration: BoxDecoration(
+                                                                image: DecorationImage(
+                                                                  image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ZQOneke_lXuviB4oeiFUw1Fnk5h8HdDdZiEbo1tT950koDYOZ8GrVbSPPgKh83W46uw&usqp=CAU")
+                                                                )
+                                                            ),
                                                         ),
-                                                          ))
+                                                        Container(
+                                                            height: 500,
+                                                            width: MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .width *
+                                                                .2,
+                                                            child: Expanded(
+                                                              child: ListView
+                                                                  .builder(
+                                                                itemCount:
+                                                                    informations
+                                                                        .length,
+                                                                itemBuilder:
+                                                                    (BuildContext
+                                                                            context,
+                                                                        int index) {
+                                                                  return Padding(
+                                                                    padding: const EdgeInsets
+                                                                            .only(
+                                                                        left:
+                                                                            35),
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
 
-                                                    ],),
+
+                                                                      children: [
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Name:",
+                                                                              style: TextStyle(
+                                                                                color: Colors.grey.shade400,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 80,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["name"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Gender:",
+                                                                              style: TextStyle(
+                                                                                color: Colors.grey.shade400,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 75,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["gender"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Father Name:",
+                                                                              style: TextStyle(
+                                                                                color: Colors.grey.shade400,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["fatherName"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Mother Name:",
+                                                                              style: TextStyle(
+                                                                                color: Colors.grey.shade400,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 37,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["motherName"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "DOB:",
+                                                                              style: TextStyle(
+                                                                                color: Colors.grey.shade400,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 90,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["dob"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Religion:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 70,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["religion"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Father Opposition:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 10,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["fatherOpposition"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Email:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 90,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["email"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Addmission Date:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 20,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["addmissionDate"],
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Class:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 90,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["class"].toString(),
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Sections:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 70,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["sections"].toString(),
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Roll Number:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["rollNumber"].toString(),
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Address:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["adress"].toString(),
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                        Row(
+                                                                          children: [
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              "Phone:",
+                                                                              style: TextStyle(color: Colors.grey.shade400),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 40,
+                                                                            ),
+                                                                            Text(
+                                                                              informations[index]["phone"].toString(),
+                                                                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(height: 20,),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ))
+                                                      ],
+                                                    ),
                                                   )
-
-
-                                              ],),
+                                                ],
+                                              ),
                                             )),
                                         Padding(
                                           padding: const EdgeInsets.only(
@@ -860,27 +1056,27 @@ Spacer(flex: 1,),
                                               bottom: 5,
                                               top: 5),
                                           child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Expanded(flex: 3,
+                                              Expanded(
+                                                flex: 3,
                                                 child: Container(
                                                   color: Colors.green,
                                                   width: MediaQuery.of(context)
                                                           .size
                                                           .width *
                                                       .3861,
-
                                                 ),
                                               ),
-
-                                              Expanded(flex: 7,
+                                              Expanded(
+                                                flex: 7,
                                                 child: Container(
                                                   color: Colors.red,
                                                   width: MediaQuery.of(context)
                                                           .size
                                                           .width *
                                                       .3861,
-                                                
                                                 ),
                                               ),
                                             ],
@@ -1087,9 +1283,9 @@ Spacer(flex: 1,),
                                                 ),
                                               ),
                                               Container(
-                                                width:  MediaQuery.of(context)
-                                                    .size
-                                                    .width *
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
@@ -1176,9 +1372,9 @@ Spacer(flex: 1,),
                                                 ),
                                               ),
                                               Container(
-                                                width:  MediaQuery.of(context)
-                                                    .size
-                                                    .width *
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
@@ -1272,7 +1468,7 @@ Spacer(flex: 1,),
                                       ),
                                     ),
                                   ),
-                                  Container(height: 40,child: Text("hello"))
+                                  Container(height: 40, child: Text("copyright all rights reserved@"))
                                 ],
                               ),
                               Padding(
@@ -1288,12 +1484,10 @@ Spacer(flex: 1,),
                                           1799,
                                     )),
                               ),
-
                             ],
                           ),
                         ),
                       ),
-
                     ],
                   ),
                 )),
