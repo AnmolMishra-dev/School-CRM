@@ -1650,7 +1650,7 @@ class _HomeState extends State<Home> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 10,left: 20),
-                                    child: Container(height: 40, child: Text("copyright all rights reserved@")),
+                                    child: Container(height: 40, child: Text("@copyright all rights reserved")),
                                   )
                                 ],
                               ),
