@@ -11,6 +11,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List informations=[
+    {
+      "name": "DemoName",
+      "gender": "Female/Male",
+      "fatherName": "DemoName",
+      "motherName": "DemoName",
+      "dob": "10/12/1999",
+      "religion": "Demo",
+      "fatherOpposition": "Demo",
+      "email": "Demo",
+      "addmissionDate": "10/1/2002",
+      "class": 3,
+      "sections": "A",
+      "rollNumber": 102,
+      "adress": "Ta-105,London",
+      "phone": "+12 054812641"
+    }
+  ];
   bool side_button = true;
   @override
   Widget build(BuildContext context) {
@@ -63,7 +81,33 @@ class _HomeState extends State<Home> {
                                     ))
                               ],
                             ),
+                          ),
+                          Container(
+                            height: 3,
+                            color: Colors.white,
+                          ),
+                          Container(
+height: 50,
+                          ),
+                          Container(
+                            height:60 ,
+                            child: Row(
+                              children: [
+                                Icon(Icons.dashboard_outlined,color: MyColors.BackGround_Color1,),
+                                Text("Dashboard",style: TextStyle(color: MyColors.BackGround_Color1)),
+Spacer(flex: 1,),
+                                Icon(Icons.arrow_drop_down,color: MyColors.BackGround_Color1,),
+
+
+                              ],
+                            ),
                           )
+
+
+
+
+
+
                         ],
                       ),
                     ))
@@ -225,6 +269,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       SingleChildScrollView(
+                        physics: ScrollPhysics(),
                         scrollDirection: Axis.vertical,
                         child: Container(
                           height: MediaQuery.of(context).size.height - 60,
@@ -236,7 +281,7 @@ class _HomeState extends State<Home> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 25, right: 20, top: 10),
+                                        left: 25, right: 20, top: 5),
                                     child: Container(
                                       child: Column(
                                         mainAxisAlignment:
@@ -246,7 +291,7 @@ class _HomeState extends State<Home> {
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                bottom: 25),
+                                                bottom: 15),
                                             child: Text(
                                               "Home - Student ",
                                               style: TextStyle(
@@ -266,7 +311,7 @@ class _HomeState extends State<Home> {
                                                         .size
                                                         .width *
                                                     .18,
-                                                height: 120,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -355,7 +400,7 @@ class _HomeState extends State<Home> {
                                                         .size
                                                         .width *
                                                     .18,
-                                                height: 120,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -445,7 +490,7 @@ class _HomeState extends State<Home> {
                                                         .size
                                                         .width *
                                                     .18,
-                                                height: 120,
+                                                  height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -535,7 +580,7 @@ class _HomeState extends State<Home> {
                                                         .size
                                                         .width *
                                                     .18,
-                                                height: 120,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -632,48 +677,211 @@ class _HomeState extends State<Home> {
                                             padding: const EdgeInsets.only(
                                                 left: 25,
                                                 right: 25,
-                                                bottom: 10,
-                                                top: 10),
+                                                bottom: 5,
+                                                top: 5),
                                             child: Container(
                                               color: Colors.white,
                                               width: MediaQuery.of(context)
                                                       .size
                                                       .width *
                                                   .386,
+                                              child: Column(
+
+                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding: const EdgeInsets.all(8.0),
+                                                    child: Text("My Information",style: TextStyle(color: MyColors.Text_Coloe_Black,fontWeight: FontWeight.bold),),
+                                                  ),
+
+                                                  Container(height: 1,color: MyColors.Intro_Text_Color,),
+
+                                                  Padding(
+                                                    padding: const EdgeInsets.only(top: 15,left: 15,right: 15),
+                                                    child: Row(
+
+
+                                                      children: [
+                                                      Container(
+                                                        height: 200,
+                                                        width: 200,
+                                                        color: Colors.green,
+
+                                                      ),
+
+
+                                                        Container(
+                                                          height: 400,
+                                                          width: MediaQuery.of(context).size.width*.2,
+                                                          child:  Expanded(
+                                                            child: ListView.builder(
+    itemCount: informations.length,
+    itemBuilder: (BuildContext context,int index){
+    return Padding(
+      padding: const EdgeInsets.only(left: 35),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+
+       children: [
+         Row(
+           children:[
+           SizedBox(width: 40,),
+             Text("Name:",style: TextStyle(color: Colors.grey.shade400,),),
+             SizedBox(width: 40,),
+             Text(informations[index]["name"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Gender:",style: TextStyle(color: Colors.grey.shade400,),),
+             SizedBox(width: 40,),
+             Text(informations[index]["gender"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Father Name:",style: TextStyle(color: Colors.grey.shade400,),),
+             SizedBox(width: 40,),
+             Text(informations[index]["fatherName"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+           ],
+         ),
+
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("DOB:",style: TextStyle(color: Colors.grey.shade400,),),
+             SizedBox(width: 40,),
+             Text(informations[index]["dob"],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+         Row(
+           children:[
+             SizedBox(width: 40,),
+             Text("Mother Name:",style: TextStyle(color: Colors.grey.shade400,fontSize: 20),),
+             SizedBox(width: 40,),
+             Text(informations[index]["motherName"],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+           ],
+         ),
+       ],
+
+      ),
+    );},
+
+
+                                                        ),
+                                                          ))
+
+                                                    ],),
+                                                  )
+
+
+                                              ],),
                                             )),
                                         Padding(
                                           padding: const EdgeInsets.only(
-                                              left: 20,
+                                              left: 25,
                                               right: 5,
-                                              bottom: 10,
-                                              top: 10),
+                                              bottom: 5,
+                                              top: 5),
                                           child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    bottom: 12),
+                                              Expanded(flex: 3,
                                                 child: Container(
-                                                  color: Colors.white,
+                                                  color: Colors.green,
                                                   width: MediaQuery.of(context)
                                                           .size
                                                           .width *
                                                       .3861,
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                      .28,
+
                                                 ),
                                               ),
-                                              Container(
-                                                color: Colors.white,
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    .3861,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    .31,
+
+                                              Expanded(flex: 7,
+                                                child: Container(
+                                                  color: Colors.red,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      .3861,
+                                                
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -695,7 +903,7 @@ class _HomeState extends State<Home> {
                                         children: [
                                           Wrap(
                                             runSpacing: 15,
-                                            spacing: 45,
+                                            spacing: 50,
                                             direction: Axis.horizontal,
                                             children: [
                                               Container(
@@ -703,7 +911,7 @@ class _HomeState extends State<Home> {
                                                         .size
                                                         .width *
                                                     .18,
-                                                height: 120,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -792,7 +1000,7 @@ class _HomeState extends State<Home> {
                                                         .size
                                                         .width *
                                                     .18,
-                                                height: 120,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -879,8 +1087,11 @@ class _HomeState extends State<Home> {
                                                 ),
                                               ),
                                               Container(
-                                                width: 350,
-                                                height: 120,
+                                                width:  MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    .18,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -965,8 +1176,11 @@ class _HomeState extends State<Home> {
                                                 ),
                                               ),
                                               Container(
-                                                width: 350,
-                                                height: 120,
+                                                width:  MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    .18,
+                                                height: 110,
                                                 decoration: BoxDecoration(
                                                     gradient: LinearGradient(
                                                         begin: Alignment
@@ -1058,11 +1272,12 @@ class _HomeState extends State<Home> {
                                       ),
                                     ),
                                   ),
+                                  Container(height: 40,child: Text("hello"))
                                 ],
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 58, right: 10, left: 10, bottom: 10),
+                                    top: 42, right: 10, left: 10, bottom: 38),
                                 child: Expanded(
                                     flex: 1,
                                     child: Container(
@@ -1070,13 +1285,15 @@ class _HomeState extends State<Home> {
                                           MediaQuery.of(context).size.height,
                                       color: Colors.red,
                                       width: MediaQuery.of(context).size.width -
-                                          1792,
+                                          1799,
                                     )),
-                              )
+                              ),
+
                             ],
                           ),
                         ),
-                      )
+                      ),
+
                     ],
                   ),
                 )),
