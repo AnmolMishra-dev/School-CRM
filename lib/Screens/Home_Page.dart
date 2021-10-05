@@ -29,6 +29,40 @@ class _HomeState extends State<Home> {
       "phone": "+12 054812641"
     }
   ];
+  List Notice=[
+    {
+      "date":"Mar 23, 2021",
+      "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
+
+    },
+    {
+      "date":"Mar 23, 2021",
+      "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
+
+    },
+    {
+      "date":"Mar 23, 2021",
+      "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
+
+    },
+    {
+      "date":"Mar 23, 2021",
+      "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
+
+    },
+    {
+      "date":"Mar 23, 2021",
+      "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
+
+    },
+    {
+      "date":"Mar 23, 2021",
+      "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
+
+    },
+
+
+  ];
   bool side_button = true;
   @override
   Widget build(BuildContext context) {
@@ -58,7 +92,7 @@ class _HomeState extends State<Home> {
                                   MyColors.BackGround_Color2
                                 ])),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Center(
                                     child: Text(
@@ -94,10 +128,10 @@ class _HomeState extends State<Home> {
                             child: Row(
                               children: [
                                 Icon(
-                                  Icons.dashboard_outlined,
+                                  Icons.person_outline_outlined,
                                   color: MyColors.BackGround_Color1,
                                 ),
-                                Text("Dashboard",
+                                Text("Student",
                                     style: TextStyle(
                                         color: MyColors.BackGround_Color1)),
                                 Spacer(
@@ -109,7 +143,113 @@ class _HomeState extends State<Home> {
                                 ),
                               ],
                             ),
-                          )
+                          ),
+                          Container(
+                            height: 60,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.person_outline_outlined,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                                Text("Teacher",
+                                    style: TextStyle(
+                                        color: MyColors.BackGround_Color1)),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.book_outlined,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                                Text("Libary",
+                                    style: TextStyle(
+                                        color: MyColors.BackGround_Color1)),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.money_outlined,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                                Text("Account",
+                                    style: TextStyle(
+                                        color: MyColors.BackGround_Color1)),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.class__outlined,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                                Text("Class",
+                                    style: TextStyle(
+                                        color: MyColors.BackGround_Color1)),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.subject,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                                Text("Subject",
+                                    style: TextStyle(
+                                        color: MyColors.BackGround_Color1)),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: MyColors.BackGround_Color1,
+                                ),
+                              ],
+                            ),
+                          ),
+
                         ],
                       ),
                     ))
@@ -246,6 +386,7 @@ class _HomeState extends State<Home> {
                               padding:
                                   const EdgeInsets.only(left: 20, right: 20),
                               child: CircleAvatar(
+                                backgroundColor: MyColors.BackGround_Color1,
                                 radius: 30,
                                 backgroundImage: NetworkImage(
                                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGfGAmrvmfJ_NkAnR37_Ap7j9OrHZ_tQ0iBSncUjb2HP16hJbxNJxjfteM2qm34tEIgmo&usqp=CAU"),
@@ -1060,17 +1201,56 @@ class _HomeState extends State<Home> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Expanded(
-                                                flex: 3,
+                                                flex: 4,
                                                 child: Container(
-                                                  color: Colors.green,
+                                                  color: Colors.white,
                                                   width: MediaQuery.of(context)
                                                           .size
                                                           .width *
                                                       .3861,
+                                                    child: Column(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      children: [
+                                                        Padding(
+                                                          padding: const EdgeInsets.all(8.0),
+                                                          child: Text("Notice Board",style: TextStyle(color: MyColors.Text_Coloe_Black,fontWeight: FontWeight.bold),),
+                                                        ),
+                                                        Container(height: 1,color:MyColors.Intro_Text_Color,),
+    Container(
+        height: 200,
+      child: Expanded(
+        child: ListView.builder(
+        itemCount: Notice.length,
+        itemBuilder: (BuildContext context,int index){
+        return
+                                                            Padding(
+                                                              padding: const EdgeInsets.all(8.0),
+                                                              child: Container(
+
+                                                                child: Row(
+                                                                    children: [
+
+                                                                   Icon(Icons.arrow_forward,color: MyColors.Intro_Text_Color,),
+                                                                      Column(
+                                                                        children: [
+                                                                          Text(Notice[index]["date"]),
+                                                                          Text(Notice[index]["notice"]),
+                                                                        ],
+                                                                      )
+                                                                    ],
+                                                                ),
+                                                              ),
+                                                            );}),
+      ),
+    )
+                                                        
+                                                      ],
+                                                    ),
                                                 ),
                                               ),
                                               Expanded(
-                                                flex: 7,
+                                                flex: 6,
                                                 child: Container(
                                                   color: Colors.red,
                                                   width: MediaQuery.of(context)
@@ -1468,22 +1648,25 @@ class _HomeState extends State<Home> {
                                       ),
                                     ),
                                   ),
-                                  Container(height: 40, child: Text("copyright all rights reserved@"))
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 10,left: 20),
+                                    child: Container(height: 40, child: Text("copyright all rights reserved@")),
+                                  )
                                 ],
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 42, right: 10, left: 10, bottom: 38),
-                                child: Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      height:
-                                          MediaQuery.of(context).size.height,
-                                      color: Colors.red,
-                                      width: MediaQuery.of(context).size.width -
-                                          1799,
-                                    )),
-                              ),
+                              // Padding(
+                              //   padding: const EdgeInsets.only(
+                              //       top: 42, right: 10, left: 10, bottom: 38),
+                              //   child: Expanded(
+                              //       flex: 1,
+                              //       child: Container(
+                              //         height:
+                              //             MediaQuery.of(context).size.height,
+                              //         color: Colors.red,
+                              //         width: MediaQuery.of(context).size.width -
+                              //             1799,
+                              //       )),
+                              // ),
                             ],
                           ),
                         ),
