@@ -60,8 +60,27 @@ class _HomeState extends State<Home> {
       "notice":"Schools to remain closed in these STATES due to rise in number of corona cases - see all details here"
 
     },
+  ];
 
-
+  List Exam=[
+    {
+      "examName": "Class Test",
+      "subject": "Mathematics",
+      "gradePoint": 4,
+      "percentsFrom": 98,
+      "percentsUpto": 100.00,
+      "date": "20/06/2017",
+      "color": false
+    },
+    {
+      "examName": "Pre Test",
+      "subject": "English",
+      "gradePoint": 3.50,
+      "percentsFrom": 40.00,
+      "percentsUpto":100.00,
+      "date": "20/06/2017",
+      "color": true
+    },
   ];
   bool side_button = true;
   @override
@@ -125,137 +144,287 @@ class _HomeState extends State<Home> {
                           Container(
                             height: 50,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 60,
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person_outline_outlined,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                      Text("Student",
-                                          style: TextStyle(
-                                              color: MyColors.BackGround_Color1)),
-                                      Spacer(
-                                        flex: 1,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                    ],
+                          SingleChildScrollView(
+                           scrollDirection: Axis.vertical,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.person_outline_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Student",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  height: 60,
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person_outline_outlined,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                      Text("Teacher",
-                                          style: TextStyle(
-                                              color: MyColors.BackGround_Color1)),
-                                      Spacer(
-                                        flex: 1,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                    ],
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.person_outline_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Teacher",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  height: 60,
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.book_outlined,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                      Text("Libary",
-                                          style: TextStyle(
-                                              color: MyColors.BackGround_Color1)),
-                                      Spacer(
-                                        flex: 1,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                    ],
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.book_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Libary",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  height: 60,
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.money_outlined,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                      Text("Account",
-                                          style: TextStyle(
-                                              color: MyColors.BackGround_Color1)),
-                                      Spacer(
-                                        flex: 1,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                    ],
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.money_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Account",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  height: 60,
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.class__outlined,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                      Text("Class",
-                                          style: TextStyle(
-                                              color: MyColors.BackGround_Color1)),
-                                      Spacer(
-                                        flex: 1,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                    ],
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.class__outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Class",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  height: 60,
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.subject,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                      Text("Subject",
-                                          style: TextStyle(
-                                              color: MyColors.BackGround_Color1)),
-                                      Spacer(
-                                        flex: 1,
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: MyColors.BackGround_Color1,
-                                      ),
-                                    ],
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.subject,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Subject",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.class__sharp,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Class Routine",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.person_outline_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Attendance",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.book_online,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Exam",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.bus_alert_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text("Transport",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.hotel_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text(" Hostel",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.notes_outlined,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text(" Notice",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.chat_bubble_outline_sharp,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                        Text(" Message",
+                                            style: TextStyle(
+                                                color: MyColors.BackGround_Color1)),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: MyColors.BackGround_Color1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
 
@@ -343,11 +512,11 @@ class _HomeState extends State<Home> {
                                   decoration: InputDecoration(
                                     enabledBorder: const OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Colors.grey, width: 0.0),
+                                          color: MyColors.Intro_Text_Color, width: 0.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Colors.grey, width: 0.0),
+                                          color: MyColors.Intro_Text_Color, width: 0.0),
                                     ),
                                   ),
                                 ),
@@ -468,6 +637,7 @@ class _HomeState extends State<Home> {
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -557,6 +727,7 @@ class _HomeState extends State<Home> {
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -647,6 +818,7 @@ class _HomeState extends State<Home> {
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -737,6 +909,7 @@ class _HomeState extends State<Home> {
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -1163,7 +1336,7 @@ class _HomeState extends State<Home> {
                                                                               style: TextStyle(color: Colors.grey.shade400),
                                                                             ),
                                                                             SizedBox(
-                                                                              width: 40,
+                                                                              width: 60,
                                                                             ),
                                                                             Text(
                                                                               informations[index]["adress"].toString(),
@@ -1182,7 +1355,7 @@ class _HomeState extends State<Home> {
                                                                               style: TextStyle(color: Colors.grey.shade400),
                                                                             ),
                                                                             SizedBox(
-                                                                              width: 40,
+                                                                              width: 70,
                                                                             ),
                                                                             Text(
                                                                               informations[index]["phone"].toString(),
@@ -1274,6 +1447,7 @@ class _HomeState extends State<Home> {
                                               Expanded(
                                                 flex: 5,
                                                 child: Container(
+                                                  height: 400,
 color: Colors.white,
                                                   width: MediaQuery.of(context)
                                                           .size
@@ -1290,47 +1464,64 @@ Padding(
 ),
                                                           Container(height: 1,color:Colors.grey.shade400,),
 
-                                                          Table(
+                                                          Container(
+                                                            height: 25,
+                                                            child: Center(
+                                                              child: Table(
+                                                                                                                            children: [
+                                                                  TableRow(
 
-                                                            children: [
-                                                              TableRow(
-                                                                  children: [
-                                                                    Text("Exam Name",),
-                                                                    Text("Subject",),
-                                                                    Text("Grade Point",),
-                                                                    Text("Percents From",),
-                                                                    Text("Percents Upto",),
-                                                                    Text("Date",),
-                                                                   
-                                                                  ]
+                                                                      children: [
+                                                                        Row(
+                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                          children: [
+                                                                            Text("Exam Name",style: TextStyle(color: MyColors.Intro_Text_Color,fontWeight: FontWeight.bold),),
+                                                                            Text("Subject",style: TextStyle(color: MyColors.Intro_Text_Color,fontWeight: FontWeight.bold),),
+                                                                            Text("Grade Point",style: TextStyle(color: MyColors.Intro_Text_Color,fontWeight: FontWeight.bold),),
+                                                                            Text("Percents From",style: TextStyle(color: MyColors.Intro_Text_Color,fontWeight: FontWeight.bold),),
+                                                                            Text("Percents Upto",style: TextStyle(color: MyColors.Intro_Text_Color,fontWeight: FontWeight.bold),),
+                                                                            Text("Date",style: TextStyle(color: MyColors.Intro_Text_Color,fontWeight: FontWeight.bold),),
+                                                                          ],
+                                                                        ),
+
+                                                                      ]
+                                                                  ),
+
+
+                                                                ],
                                                               ),
-
-                                                             
-                                                            ],
+                                                            ),
                                                           ),
                                                           Container(
                                                               height: 1,color: MyColors.Intro_Text_Color,
                                                           ),
-                                                          Table(
+                                                          Expanded(
+                                                            child: ListView.builder(
+                                                                shrinkWrap: true,
+                                                                scrollDirection: Axis.vertical,
+                                                                itemCount: Exam.length,
+                                                                itemBuilder: (BuildContext context,int index){
+                                                                  return
+                                                                    Container(
+                                                                      color: Exam[index]["color"]==false?Colors.white:Colors.grey.shade400,
+                                                                      height: 30,
+                                                                      
+                                                                      child: Padding(
+                                                                        padding: const EdgeInsets.only(left: 15,right: 15),
+                                                                        child: Row(
 
-                                                            children:  List.generate(5,(index) {
-                                                              return  TableRow(
-                                                                  children: [
-                                                                    Text("Exam Name",),
-                                                                    Text("Subject",),
-                                                                    Text("Grade Point",),
-                                                                    Text("Percents From",),
-                                                                    Text("Percents Upto",),
-                                                                    Text("Date",),
-
-                                                                  ]
-                                                              );
-
-
-                                                            }),
-
-
-                                                    ),
+                                                                          children: [
+                                                                            Container(width: 100,child: Center(child: Text(Exam[index]["examName"]))),
+                                                                            Container(width: 160,child: Center(child: Text(Exam[index]["subject"]))),
+                                                                            Container(width: 90,child: Center(child: Text(Exam[index]["gradePoint"].toString()))),
+                                                                            Container(width: 160,child: Center(child: Text(Exam[index]["percentsFrom"].toString()))),
+                                                                            Container(width: 150,child: Center(child: Text(Exam[index]["percentsUpto"].toString()))),
+                                                                            Container(child: Center(child: Text(Exam[index]["date"].toString()))),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    );}),
+                                                          ),
 ]
                                                 ),
                                               )),
@@ -1344,6 +1535,7 @@ Padding(
                                     padding: const EdgeInsets.only(
                                       left: 25,
                                       right: 20,
+
                                     ),
                                     child: Container(
                                       child: Column(
@@ -1364,6 +1556,7 @@ Padding(
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -1453,6 +1646,7 @@ Padding(
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -1544,6 +1738,7 @@ Padding(
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
@@ -1633,6 +1828,7 @@ Padding(
                                                     .18,
                                                 height: 110,
                                                 decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
                                                     gradient: LinearGradient(
                                                         begin: Alignment
                                                             .centerLeft,
